@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html>
+
+  <!-- HELLO DEAR INSPECTOR -->
+  <!-- I AM THE CREATOR OF THIS PROGRAM, Tata Li (李奥) -->
+  <!-- If you have any questions or suggestions, contact me via just4spam123@outlook.com -->
+
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Planner</title>
+    <link rel="icon" href="./favicon.png"  type="image/x-icon">
+    <style>
+
+    input[class="borderRI" i]
+    {
+      border-radius: 15px;
+      background-color: white;
+      border-color: black;
+      border-width: 1.2px;
+        padding: 10px 60px;
+        padding-top: 10px;
+        padding-right: 60px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+      width: 140px;
+    }
+
+    a, h3, h2, h1, h4, h5, h6, div, p, button, input{
+      font-family: avenir;
+    }
+
+    .buttonR
+      {
+        border-radius: 15px;
+        background-color: white;
+        border-color: black;
+        border-width: 1px;
+        padding: 8px 15px;
+        width: 215px;
+        height: 40px;
+      }
+
+    .buttonRC
+      {
+        border-radius: 15px;
+        background-color: white;
+        border-color: black;
+        border-width: 1px;
+        padding: 8px 15px;
+        width: 215px;
+        height: 40px;
+        cursor: pointer;
+      }
+
+      .buttonRC:hover{
+        background-color: white;
+        color: black;
+        box-shadow: 1px 2px 10px 2px rgba(0,0,0,0.2);
+      }
+
+      .buttonBar
+      {
+        border-top-left-radius: 20px;
+        border-bottom-left-radius: 20px;
+        border-top-right-radius: 0px;
+        border-bottom-right-radius: 0px;
+        background-color: white;
+        border-color: black;
+        border-width: 1px;
+        padding: 8px 15px;
+        height:60px;
+        width:500px;
+        text-align:left;
+      }
+
+      .buttonBar:hover{
+        background-color: 80%;
+      }
+
+      .calendar
+      {
+        border-top-left-radius: 0px;
+        border-bottom-left-radius: 0px;
+        border-top-right-radius: 20px;
+        border-bottom-right-radius: 20px;
+        background-color: white;
+        border-color: black;
+        border-width: 1px;
+        border-left-width: 0px;
+        padding: 8px 15px;
+        position: relative;
+          bottom: -4.5px;
+        height:60px;
+        width:60px;
+        text-align:center;
+        font-weight: bold;
+        font-size: 30px;
+        cursor:pointer;
+      }
+    
+      .rectangle {
+        height: 5000px;
+        width: 25%;
+        opacity: 0;
+        border-radius: 40px;
+      }
+
+      .funrectangle {
+        background-color: #FAF0FF;
+        border-color: #FDF9FF;
+        border-style: initial;
+        border-width: 2px;
+        height: 10000px;
+        width: 360px;
+        border-radius: 40px;
+        z-index: -1;
+        position: absolute;
+          top: -230px;
+          left: 50px;
+      }
+
+      .tagBar
+      {
+        border-top-left-radius: 5px;
+        border-bottom-left-radius: 5px;
+        border-top-right-radius: 5px;
+        border-bottom-right-radius: 5px;
+        background-color: white;
+        border-color: black;
+        border-width: 1.2px;
+        height:25px;
+        text-align:center;
+        font-weight: bold;
+      }
+
+    </style>
+
+  </head>
+
+
+  <body style="background-color: white;" onload="Load()">
+
+    <div style="float:left; width: 350px; position: absolute; left: 80px">
+
+      <br/>  
+      <h1>Add Task</h1>
+
+      
+      <button type="button" class="buttonR" id="subjectButton" style="width:80px; height: 40px; text-align: left; border-top-right-radius: 0px;border-bottom-right-radius: 0px;">Subject</button>
+      <button type="button" class="buttonR" style="height: 40px; width:140px; text-align: left; border-top-left-radius: 0px;border-bottom-left-radius: 0px; position: relative; right: 10px; bottom: -0px; border-left-width:0px;">
+      <form">
+        <select id="subject">
+          <option value = ""> None </option>
+          <option value = "Science"> Science </option>
+          <option value = "Math"> Math </option>
+          <option value = "Chinese"> Chinese </option>
+          <option value = "English"> English </option>
+          <option value = "Humanities"> Humanities </option>
+          <option value = "InS"> I&S </option>
+          <option value = "PE"> PE </option>
+          <option value = "Design"> Design </option>
+          <option value = "Drama"> Drama </option>
+          <option value = "Art"> Art </option>
+          <option value = "Music"> Music </option>
+          <option value = "Dance"> Dance </option>
+          <option value = "Wushu"> Wushu </option>
+          <option value = ""> Other </option>
+        </select>
+      </form>
+      </button>
+      
+      <br/>
+      <br/>
+      <!--
+      <button type="button" class="buttonR" id="subjectButton" style="width:80px; height: 40px; text-align: left; border-top-right-radius: 0px;border-bottom-right-radius: 0px;">Language</button>
+      <button type="button" class="buttonR" style="height: 40px; width:140px; text-align: left; border-top-left-radius: 0px;border-bottom-left-radius: 0px; position: relative; right: 10px; bottom: -0.5px; border-left-width:0px">
+      <form>
+        <select id="language">
+          <option value = ""> None </option>
+          <option value = "&nbspEN"> English </option>
+          <option value = "&nbspCH"> Chinese </option>
+        </select>
+      </form>
+      </button>
+
+      <br/>
+      <br/>-->
+
+      <input class="borderRI" placeholder="Task" id="task" maxlength="40" /><br/><br/>
+      <input type="date" class="borderRI" id="date" placeholder="Date (yyyy-mm-dd)" minlength="10"/><br/><br/>
+
+      <button type="button" class="buttonR" id="tagButton" style="width:80px; height: 40px; text-align: left; border-top-right-radius: 0px;border-bottom-right-radius: 0px;">Tag</button>
+      <button type="button" class="buttonR" style="height: 40px; width:140px; text-align: left; border-top-left-radius: 0px;border-bottom-left-radius: 0px; position: relative; right: 10px; bottom: -0.5px; border-left-width:0px">
+      <form>
+        <select id="tag">
+          <option value = "None"> None </option>
+          <option value = "SUMM"> Summative </option>
+          <option value = "FORM"> Formative </option>
+          <option value = "Prior"> Prior </option>
+          <option value = "Important"> Important </option>
+        </select>
+      </form>
+      </button>
+
+      <br/>
+      <br/>
+
+      <button type="button" class="buttonRC" onclick="Create()" id="submit"><b><big>Add New Task</big></b></button>
+      
+      <!--
+      <br/><br/>
+      <button class="buttonRC" onclick="SavenStore()"><b><big>Save and Store</big></b></button> -->
+
+      <br/><br/>
+      <button class="buttonRC" onclick="ClearForm()"><b><big>Clear Form</big></b></button>
+
+      <!--
+      <br/><br/>
+      <button class="buttonRC" onclick="Schedule()" id="schedulebutton" style="opacity: 1"><b><big>View Schedule</big></b></button>-->
+
+      <br/><br/>
+      <a href="settings.html"><button class="buttonRC"><b><big>Settings</big></b></button></a>
+
+      <script>
+
+        let idList = [0];
+        var frontpartnum = 2200;
+        var backpartnum = 0;
+        var tasksList = document.getElementById("tasks");
+        let subjectslist
+        let colorslist
+
+        const defaultsubjects = ['Science','Math','English','Chinese','Humanities','I&S','Design','Art','Drama','Music','Wushu','Dance','PE','Wellbeing']
+        const defaultcolors = ['CDF6C0','F5F8C3','F7B79B','C0CAF6','C0E9F6','C0E9F6','FAB4F6','F6C0C4','F6C0C4','F6C0C4','F6C0C4','F6C0C4','B8FFF8','CEDE40']
+
+        function ClearForm(){
+          document.getElementById("task").value = "";
+          document.getElementById("date").value = "";
+          document.getElementById("tag").value = "None";
+          document.getElementById("subject").value = "";
+          //document.getElementById("language").value = ""
+        }
+
+        function Create()
+        {
+          tasksList = document.getElementById("tasks");
+          let subjectRaw = document.getElementById("subject").value;
+          let tagVal = document.getElementById("tag").value;
+          //let langVal = document.getElementById("language").value;
+
+          if (subjectRaw=="InS"){
+            subjectRaw = "I&S"
+          }
+          //let subject = "<big><b>"+ subjectRaw +langVal+"</b></big>";
+          let subject = "<big><b>"+ subjectRaw +"</b></big>";
+          let task = "<big>" + document.getElementById("task").value + "</big>";
+
+          let dateStr = (document.getElementById("date").value);
+          let dateArray = dateStr.split("-");
+          let day = parseInt(dateArray[2]);
+          let month = parseInt(dateArray[1]);
+          let year = parseInt(dateArray[0]);
+
+          let thing = document.createElement("div")
+
+          let newTask = document.createElement("button");
+          let newDate = document.createElement("button");
+          let newTag;
+          let newBreak = document.createElement("br");
+          newTask.setAttribute("class","buttonBar");
+          newDate.setAttribute("class","calendar");
+
+          newTag = document.createElement("div");
+          if (tagVal == "None"){
+            console.log("no tag");
+            newTag.innerHTML = ("<button style='position: relative; z-index: -3; bottom: 54px; float: right; right: 545px; opacity: 1;' class='tagBar'>"+tagVal+"</button><br/>");
+          } else {
+            newTag.innerHTML = ("<button style='position: relative; z-index: 3; bottom: 54px; float: right; right: 545px; opacity: 1;' class='tagBar'>"+tagVal+"</button><br/>");
+
+          }
+
+          let newid = (9000000000000 + year*100000000 + month*1000000 + day*10000 + backpartnum*10);
+          backpartnum += 1;
+          if (Number.isInteger(newid)==false){
+            frontpartnum += 1;
+            newid = (9000000000000+frontpartnum*100000000+(Math.floor(Math.random() * 999))*10);
+            day = 0;
+          }
+          shortid = newid/10
+          thing.setAttribute("id", String(shortid));
+          newTask.setAttribute("id", String(newid));
+          newTask.setAttribute("onclick", "Destroy("+String(parseInt(shortid))+")");
+          newDate.setAttribute("onclick", "Pin("+String(parseInt(shortid))+")");
+          newDate.setAttribute("id", String(newid+1));
+          newTag.setAttribute("id", String(newid+2));
+
+          idList.push(shortid);
+          if (idList[0] == 0){
+            idList.splice(0, 1);
+          }
+          idList.sort();
+          console.log(shortid);
+          let idIndex = idList.indexOf(shortid);
+          console.log(idList);
+
+          if (subjectslist.indexOf(subjectRaw) != -1){
+            newTask.setAttribute('style','background-color: #'+colorslist[subjectslist.indexOf(subjectRaw)]+';');
+          } else {
+            newTask.setAttribute('style','background-color: #FFFFFF;');
+          }
+
+          if (subjectRaw != ""){
+            newTask.innerHTML = subject + ": " + task;
+          } else{
+            newTask.innerHTML = task + "&nbsp";
+          }
+          newDate.innerHTML = day;
+
+          //alert(idIndex);
+
+          tasksList.insertBefore(thing, tasksList.children[idIndex])
+          thing.appendChild(newTask)
+          thing.appendChild(newDate)
+          thing.appendChild(newTag)
+        }
+
+        //document.addEventListener('contextmenu', event => event.preventDefault());
+        function Pin(id){
+          //alert('im right clicked');
+          let date = document.getElementById(String(id)+"1");
+          let tag = document.getElementById(String(id)+"2");
+          let newid = parseInt(id)*10;
+          let shortid = parseInt(id)
+          let item = document.getElementById(String(newid));
+          let thing = document.getElementById(String(shortid))
+          let idIndex = idList.indexOf(shortid);
+
+          if (newid > 7000000000000){
+            alert("Task Pinned!");
+            newid = newid-5000000000000;
+            shortid = newid/10
+            item.setAttribute("onclick", "Destroy("+String(parseInt(shortid))+")");
+            date.setAttribute("onclick", "Pin("+String(parseInt(shortid))+")");
+            item.setAttribute("id", String(newid));
+            date.setAttribute("id", String(newid+1));
+            tag.setAttribute("id", String(newid+2));
+            thing.setAttribute("id", String(shortid))
+            date.setAttribute("style","color: #db0000");
+            console.log("newid has changed");
+            console.log(item.outerHTML);
+            console.log(shortid);
+
+            var idx = idList.indexOf(shortid+500000000000);
+            idList.splice(idx, 1, shortid);
+
+            idList.sort();
+            console.log("idList is rearranged");
+            console.log(idList);
+            idIndex = idList.indexOf(shortid);
+
+            //alert(idIndex);
+            tasksList.insertBefore(thing, tasksList.children[idIndex])
+            thing.appendChild(item)
+            thing.appendChild(date)
+            thing.appendChild(tag)
+            // tasksList.insertBefore(item, tasksList.children[idIndex*3]);
+            // tasksList.insertBefore(date, tasksList.children[idIndex*3+1]);
+            // tasksList.insertBefore(tag, tasksList.children[idIndex*3+2]);
+
+          } else {
+            alert("Task Unpinned!");
+            newid = newid+5000000000000;
+            shortid = newid/10
+            item.setAttribute("onclick", "Destroy("+String(parseInt(newid/10))+")");
+            date.setAttribute("onclick", "Pin("+String(parseInt(newid/10))+")");
+            item.setAttribute("id", String(newid));
+            date.setAttribute("id", String(newid+1));
+            tag.setAttribute("id", String(newid+2))
+            thing.setAttribute("id", String(shortid))
+            date.setAttribute("style","color: black");
+            console.log("newid has changed");
+            console.log(item.outerHTML);
+
+            let idx = idList.indexOf(shortid-500000000000);
+            idList.splice(idx, 1, shortid);
+
+            idList.sort();
+            console.log("idList is rearranged");
+            console.log(idList);
+            let idIndex = idList.indexOf(shortid)+1;
+            
+            //alert(idIndex);
+            tasksList.insertBefore(thing, tasksList.children[idIndex])
+            thing.appendChild(item)
+            thing.appendChild(date)
+            thing.appendChild(tag)
+            // tasksList.insertBefore(item, tasksList.children[idIndex*3]);
+            // tasksList.insertBefore(date, tasksList.children[idIndex*3]);
+            // tasksList.insertBefore(tag, tasksList.children[idIndex*3]);
+          }
+        }
+
+        function Destroy(id)
+        {
+          alert("Task Deleted!\nEdit task in the purple form on the left of window");
+
+          //alert(id);
+          var item = document.getElementById(String(id)+"0");
+          var date = document.getElementById(String(id)+"1");
+          var tag = document.getElementById(String(id)+"2");
+          var thing = document.getElementById(String(id))
+          var tasksList = document.getElementById("tasks");
+
+          var idstr = String(id);
+          var taskpart = JSON.stringify(document.getElementById(String(id)+"0").innerHTML);
+          
+          var i = 0
+          var hasSubject = false;
+          while (i<taskpart.length && hasSubject == false){
+            if (taskpart[i]==":"){
+              var subjectpart = taskpart.substring(9, i-10);
+              var contentpart = taskpart.substring(i+7, taskpart.length-7);
+              hasSubject = true;
+
+              // if (subjectpart.indexOf("CH") != -1){
+              //   var subjectpart = subjectpart.substring(0, subjectpart.indexOf("CH")-6)
+              //   var langpart = "&nbspCH"
+              // } else if (subjectpart.indexOf("EN") != -1){
+              //   var subjectpart = subjectpart.substring(0, subjectpart.indexOf("EN")-6)
+              //   var langpart = "&nbspEN"
+              // } else {
+              //   var langpart = ""
+              // }
+              console.log(subjectpart)
+              if (subjectpart == "I&amp;S"){
+                subjectpart="InS"
+              }
+            }
+
+            i+=1
+          } 
+
+          if (!hasSubject){
+            var contentpart = taskpart.substring(6, taskpart.length-13);
+            var subjectpart = "";
+          }
+
+          if (idstr.substring(5,9)=="0000"){
+            var datepart = "";
+          }
+          var datepart = idstr.substring(1, 5)+"-"+idstr.substring(5, 7)+"-"+idstr.substring(7, 9);
+          //alert(datepart)
+
+          document.getElementById("task").value = contentpart;
+          document.getElementById("subject").value = subjectpart;
+          document.getElementById("date").value = datepart;
+          //document.getElementById("language").value = langpart;
+
+          thing.removeChild(item);
+          thing.removeChild(date);
+          thing.removeChild(tag);
+          tasksList.removeChild(thing)
+
+          var idIndex = idList.indexOf(parseInt(id));
+          // alert(idList)
+          // alert(idIndex)
+          idList.splice(idIndex, 1);
+          console.log(idList);
+        }
+
+      </script>
+
+      <br/>
+      <div class="rectangle" style="height: 4000px;"></div>
+      <div class="rectangle"></div><br/><br/><br/><br/><br/>
+      <p style="font-family: times;">Copyright © 2022-3022 Tata Li</p>
+      <br/><br/>
+
+    </div>
+
+    <div style="position: absolute; left: 400px; width: 1040px">
+
+
+      <p style="font-family: times; position: absolute; top: 5px;left: 485px;" onclick="PopInfo()"><small><u style="cursor:pointer;">v1.0916.2230</u></small></p><br/>
+
+      <h1> Digital Planner </h1>
+      <div id="tasks"></div>
+
+    </div>
+
+    <div>
+      <script>
+
+        let storedItem = localStorage.getItem("storedItem");
+        let storedItem2 = localStorage.getItem("idList");
+
+        function PopInfo(){
+          alert("========VERSION=======\n> Product: Digital Planner\n> Version: v1.0916.2230\n> Creator: Tata Li 李奥\n> Supported Browswer: Google Chrome\n> Date Created: January 23, 2022\n> Date Last Modified: September 16, 2022\n> Contact: just4spam123@outlook.com\n\n========DISCLAIMER=======\n> All user information is locally stored on their device only\n> Bugs and errors might occur\n> The creator is NOT responsible for any data loses\n\nCopyright © 2022-3022 Tata Li")
+          alert("========INSTRUCTIONS=======\n\nSIDE PANEL (LEFT)\n> Use the side panel to set attributes of a new task\n> Click \"ADD NEW TASK\" to add a new task\n> Click \"CLEAR FORM\" to erase your input in the purple bar\n> CLICK \"SETTINGS\" to customize or RESET the planner\nRIGHT\n> Click the date part of the task to PIN\n> Click the rest to DELETE or EDIT\n> Click the VERSION NUMBER to show info message\n\n========UPDATES=======\n> Settings Page\n> Bug fixes\n\n")
+        }
+
+        function SavenStore(){
+          let item = document.getElementById("tasks");
+          var newItem = item.innerHTML;
+        
+          let newItemSeparate = newItem.split("\\");
+          //console.log(newItemSeparate);
+          var newestItem;
+          //console.log(newItemSeparate.length);
+          for (var i = 0; i < newItemSeparate.length; i += 1) {
+            newestItem = newestItem + newItemSeparate[i];
+          }
+
+          //console.log(newestItem);
+          //alert(idList);
+          //alert("Planner Backed Up!")
+          localStorage.setItem("storedItem", newestItem);
+          localStorage.setItem("idList", idList);
+
+        }
+
+        function Load(){
+          console.log(storedItem);
+          console.log(storedItem2);
+          localStorage.getItem("storedItem");
+
+          if (navigator.userAgent.indexOf("Chrome") == -1){
+            alert("You are currently NOT using Chrome. Please use Chrome on computer for the BEST experience. Otherwise, there will be formatting errors and other unpleasing bugs or glitches. Chrome is the MOST recommended browser for this program.")
+            close()
+          }
+
+          //Load Tasklist
+          if (storedItem == null || storedItem == "true"){
+            document.getElementById("tasks").innerHTML = ""
+            idList = [0]
+            tasksList = document.getElementById("tasks")
+            alert("Are you new to this planner?")
+            PopInfo()
+          } else {
+            document.getElementById("tasks").innerHTML = storedItem.substr(9, storedItem.length)
+            localStorage.getItem("idList")
+            idList = storedItem2.split(',')
+
+            for (var i=0; i<idList.length; i+=1){
+              idList[i] = parseInt(idList[i])
+            }
+            tasksList = document.getElementById("tasks");
+          }
+          //Load Subjectlist
+          if (localStorage.getItem("customsubjects") == null){
+            subjectslist = defaultsubjects
+            colorslist = defaultcolors
+          } else {
+            subjectslist = localStorage.getItem("customsubjects").split(",")
+            colorslist = localStorage.getItem("customcolors").split(",")
+          }
+          console.log(subjectslist,colorslist)
+
+          //Load Subject Input Droplist
+          const begtemp = "<option value = ''> None </option>"
+          const thistemp = "<option value = 'πSUB∂'> πSUB∂ </option>"
+          const endtemp = "<option value = ''> Other </option>"
+          let newtemp = begtemp
+          let newphrase
+          for (var i=0;i<subjectslist.length;i+=1){
+            newtemp = newtemp+thistemp.replace(/πSUB∂/g,subjectslist[i])
+          }
+          newtemp = newtemp+endtemp
+          document.getElementById("subject").innerHTML = newtemp
+
+          if (localStorage.getItem("themebarcolor") == null){
+            themebarcolor = defaultthemebarcolor
+            console.log("themebarcolor is null")
+          } else {
+            themebarcolor = localStorage.getItem("themebarcolor")
+            document.getElementById("funrectangle").setAttribute("style","width: 300px; position: absolute; left: 40px; background-color: "+themebarcolor+";")
+          }
+          console
+        }
+
+      </script>
+
+    </div>
+
+    <div>
+      <div class="funrectangle" id="funrectangle" style="width: 300px; position: absolute; left: 40px; background-color: #FAF0FF;"></div>
+
+      <!--<div class="funrectangle" style="height:30px; width: 300px; position: absolute; top: 120px; left: 380px; z-index: 2; background-color: white;"></div>-->
+    </div>
+
+    <div>
+      <!--
+      <img src="schedule3.png" alt="i'm confused" id="scheduleImage" style="width: 820px; opacity: 0; z-index: -750; position: absolute; left: -1000px; top: 5000px;"/>-->
+
+      <script>
+
+        let scheduleOpen = false;
+
+        function Schedule(){
+          let schedule = document.getElementById("scheduleImage");
+          let button = document.getElementById("schedulebutton");
+
+          if (scheduleOpen == false){
+            scheduleOpen = true;
+            
+            schedule.setAttribute("style", "width: 820px; opacity: 1; position: absolute; top: 100px; right: 10px; z-index: 4;");
+            button.innerHTML = "<b><big>Close Schedule</big></b>";
+
+          } else {
+            scheduleOpen = false;
+            schedule.setAttribute("style", "width: 820px; opacity: 0.5; position: absolute; left: -1000px; z-index: -4;");
+            button.innerHTML = "<b><big>View Schedule</big></b>";
+          }
+        }
+
+      </script> 
+
+    </div>
+
+    <div> <!--failed notification-->
+      <script>
+
+        function AskNotification(){
+          if (Notification.permission === "granted"){
+            console.log("We have permission to send notifications");
+            Send("PLANNER", "Hello!");
+          } else if (Notification.permission === "default"){
+            Notification.requestPermission().then(permission => {console.log(permission);});
+          }
+        }
+        
+        function Send(title, text){
+          var img = "./favicon.png";
+          var notification = new Notification(title, {body: text, icon: img});
+          console.log("Notification sent");
+        }
+
+        AskNotification()
+        Send("Title","Text")
+
+      </script>
+    </div>
+    <div>
+      
+      <h1 id='dateDisplay' style="font-weight: lighter; position: absolute; top: 30px; left:800px; color: grey"><small><small>IDK 00 - 00:00</small></small></h1>
+
+      <script>
+        UpdateTime();
+
+        setInterval(function(){UpdateTime()}, 10000);
+        setInterval(function(){SavenStore()}, 1000);
+
+        function UpdateTime(){
+          let text = document.getElementById("dateDisplay");
+          let date = new Date();
+          let newDate = JSON.stringify(date);
+          let month = newDate.slice(6,8);
+          let day = newDate.slice(9,11);
+          let time = newDate.slice(12,17);
+          let newHour = String(parseInt(time.slice(0,2)) + 8);
+          if (newHour > 23.5){
+            newHour = String(parseInt(newHour) - 24);
+          }
+          let newNoHour = time.slice(2,6);
+          let newTime = newHour + newNoHour;
+          let week = newDate.slice(11,12);
+          let newMonth;
+
+          month = parseInt(month)
+          const monthslist = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+          newMonth = monthslist[month-1]
+
+          if (day[1] == "1" && day!="11"){
+            newDaySup = "<sup>st</sup>";
+          } else if (day[1] == "2" && day!="12"){
+            newDaySup = "<sup>nd</sup>";
+          } else if (day[1] == "3" && day!="13"){
+            newDaySup = "<sup>rd</sup>";
+          } else {
+            newDaySup = "<sup>th</sup>";
+          }
+
+          text.innerHTML = "<small><small>" + newMonth + "&nbsp" + day + newDaySup + "&nbsp-&nbsp" + newTime + "</small></small>";
+        }
+      </script>
+
+    </div>
+
+  </body>
+</html>
