@@ -103,6 +103,8 @@
 		function LogIn(){
 			name = document.getElementById("name_input").value
 			if (activated >= 2){
+				console.log(parseInt(document.getElementById("code_input").value))
+				console.log(code)
 				if (parseInt(document.getElementById("code_input").value) == code){
 					alert("Success!")
 					inTest = true
