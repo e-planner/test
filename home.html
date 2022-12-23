@@ -92,7 +92,7 @@
 		}
 	 
 	    function GetCode() {
-	    	email = document.getElementById("email_input")
+	    	email = document.getElementById("email_input").value
 	   		code = Math.round(Math.random()*10000)
 			document.getElementById("emailcodeform").action="https://formsubmit.co/"+email
 	    	document.getElementById("emailcode").value = code
